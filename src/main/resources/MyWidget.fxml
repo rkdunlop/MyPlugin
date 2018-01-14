@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.StackPane?>
-<StackPane xmlns="http://javafx.com/javafx"
-           xmlns:fx="http://javafx.com/fxml"
-           fx:controller="org.frc496.widget.MyWidget"
-           fx:id="root"
-           minWidth="32" minHeight="32"
-           prefHeight="128" prefWidth="128">
+
+<StackPane fx:id="root" minHeight="32" minWidth="32"
+	prefHeight="128" prefWidth="128" xmlns="http://javafx.com/javafx/8.0.141"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.frc496.widget.MyWidget">
+
+	<padding>
+		<Insets topRightBottomLeft="8" />
+	</padding>
+	<ToggleButton fx:id="button" maxHeight="Infinity"
+		maxWidth="Infinity" text="MY BUTTON" />
 
 </StackPane>

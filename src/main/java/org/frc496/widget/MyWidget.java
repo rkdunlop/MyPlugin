@@ -1,75 +1,53 @@
 package org.frc496.widget;
 
+import java.util.List;
+
+import edu.wpi.first.shuffleboard.api.data.IncompatibleSourceException;
+import edu.wpi.first.shuffleboard.api.sources.DataSource;
+import edu.wpi.first.shuffleboard.api.widget.AnnotatedWidget;
 import edu.wpi.first.shuffleboard.api.widget.Description;
-import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
-
-import javafx.beans.binding.Bindings;
+import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
 import javafx.beans.property.Property;
-import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 
-@Description(name = "MyWidget", dataTypes = {String.class})
-public class MyWidget extends SimpleAnnotatedWidget<String> {
+@Description(name = "MyWidget", dataTypes = String.class)
+@ParametrizedController("MyWidget.fxml")
 
-	 @FXML
-	  private Pane root;
+public class MyWidget implements AnnotatedWidget {
 
-	  private final Property<Color> trueColor
-	      = new SimpleObjectProperty<>(this, "colorWhenTrue", Color.LAWNGREEN);
-	  private final Property<Color> falseColor
-	      = new SimpleObjectProperty<>(this, "colorWhenFalse", Color.DARKRED);
+	@FXML
+	private Pane root;
 
-	  @FXML
-	  private void initialize() {
-	    root.backgroundProperty().bind(
-	        Bindings.createObjectBinding(
-	            () -> createSolidColorBackground(getColor()),
-	            dataProperty(), trueColor, falseColor));
-	    exportProperties(trueColor, falseColor);
-	  }
+	@Override
+	public Pane getView() {
+		
+		return root;
+	}
 
-	  @Override
-	  public Pane getView() {
-	    return root;
-	  }
+	@Override
+	public List<? extends Property<?>> getProperties() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-	  private Color getColor() {
-	    final String data = getData();
-	    if (data == null) {
-	      return Color.BLACK;
-	    }
-	    return Color.BLACK;
-	  }
+	@Override
+	public Property<String> titleProperty() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-	  private Background createSolidColorBackground(Color color) {
-	    return new Background(new BackgroundFill(color, null, null));
-	  }
+	@Override
+	public void addSource(DataSource source) throws IncompatibleSourceException {
+		// TODO Auto-generated method stub
+		
+	}
 
-	  public Color getTrueColor() {
-	    return trueColor.getValue();
-	  }
+	@Override
+	public ObservableList<DataSource> getSources() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-	  public Property<Color> trueColorProperty() {
-	    return trueColor;
-	  }
-
-	  public void setTrueColor(Color trueColor) {
-	    this.trueColor.setValue(trueColor);
-	  }
-
-	  public Color getFalseColor() {
-	    return falseColor.getValue();
-	  }
-
-	  public Property<Color> falseColorProperty() {
-	    return falseColor;
-	  }
-
-	  public void setFalseColor(Color falseColor) {
-	    this.falseColor.setValue(falseColor);
-	  }
 }
