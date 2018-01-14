@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
 
-<StackPane fx:id="root" minHeight="32" minWidth="32"
-	prefHeight="128" prefWidth="128" xmlns="http://javafx.com/javafx/8.0.141"
-	xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.frc496.widget.MyWidget">
+<StackPane fx:id="root" minHeight="32" minWidth="32" prefHeight="404.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.frc496.widget.MyWidget">
 
 	<padding>
 		<Insets topRightBottomLeft="8" />
 	</padding>
-	<ToggleButton fx:id="button" maxHeight="Infinity"
-		maxWidth="Infinity" text="MY BUTTON" />
+   <children>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Rectangle id="switchLeft" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="111.0" stroke="BLACK" strokeType="INSIDE" width="98.0" GridPane.rowIndex="2" />
+            <Rectangle id="farSwitchLeft" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="111.0" layoutX="10.0" layoutY="278.0" stroke="BLACK" strokeType="INSIDE" width="98.0" />
+            <Rectangle id="scaleLeft" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="111.0" layoutX="10.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="98.0" GridPane.rowIndex="1" />
+            <Rectangle id="farSwitchRight" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="111.0" layoutX="10.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="98.0" GridPane.columnIndex="1" />
+            <Rectangle id="scaleRight" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="111.0" layoutX="277.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="98.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Rectangle id="switchRight" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="111.0" layoutX="10.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="98.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </children>
 
 </StackPane>

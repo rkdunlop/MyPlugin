@@ -1,53 +1,28 @@
-package org.frc496.widget;
+package org.frc496.widget.MyPlugin;
 
-import java.util.List;
-
-import edu.wpi.first.shuffleboard.api.data.IncompatibleSourceException;
-import edu.wpi.first.shuffleboard.api.sources.DataSource;
-import edu.wpi.first.shuffleboard.api.widget.AnnotatedWidget;
 import edu.wpi.first.shuffleboard.api.widget.Description;
 import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
-import javafx.beans.property.Property;
-import javafx.collections.ObservableList;
+import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 
 @Description(name = "MyWidget", dataTypes = String.class)
 @ParametrizedController("MyWidget.fxml")
 
-public class MyWidget implements AnnotatedWidget {
+public class MyWidget extends SimpleAnnotatedWidget<Object> {
 
 	@FXML
 	private Pane root;
 
+	@FXML
+	private void initialize() {
+		
+	}
+
 	@Override
 	public Pane getView() {
-		
+
 		return root;
-	}
-
-	@Override
-	public List<? extends Property<?>> getProperties() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Property<String> titleProperty() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void addSource(DataSource source) throws IncompatibleSourceException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public ObservableList<DataSource> getSources() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
