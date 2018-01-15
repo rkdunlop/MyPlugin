@@ -1,4 +1,4 @@
-package org.frc496.widget.MyPlugin;
+package org.frc496.widget;
 
 import edu.wpi.first.shuffleboard.api.widget.Description;
 import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
@@ -11,18 +11,18 @@ import javafx.scene.layout.Pane;
 
 public class MyWidget extends SimpleAnnotatedWidget<Object> {
 
-	@FXML
-	private Pane root;
+  @FXML
+  private Pane root;
 
-	@FXML
-	private void initialize() {
-		
-	}
+  @FXML
+  private void initialize() {
 
-	@Override
-	public Pane getView() {
+  }
 
-		return root;
-	}
+  @Override
+  public Pane getView() {
+
+    return root;
+  }
 
 }
